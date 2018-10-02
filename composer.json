@@ -6,5 +6,7 @@
             "email": "upside89@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-json": "*"
+    }
 }

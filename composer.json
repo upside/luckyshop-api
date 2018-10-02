@@ -1,0 +1,10 @@
+{
+    "name": "upside/lacky-shop-api",
+    "authors": [
+        {
+            "name": "upside",
+            "email": "upside89@gmail.com"
+        }
+    ],
+    "require": {}
+}

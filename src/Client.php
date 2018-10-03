@@ -70,7 +70,8 @@ class Client
         $opts = [
             'http' => [
                 'method' => $method,
-                'content' => $data
+                'content' => $data,
+                'user_agent' => 'LackyShop Api Client v1'
             ]
         ];
 

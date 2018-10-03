@@ -6,7 +6,7 @@
  * Time: 22:03
  */
 
-namespace luckyshopApi;
+namespace luckyShopApi;
 
 use Exception;
 
@@ -36,7 +36,7 @@ class Lead
      * @param string $campaignHash
      * @throws Exception
      */
-    public function __construct(string $name, string $phone, string $ip, string $userAgent, string $campaignHash)
+    public function __construct($name, $phone, $ip, $userAgent, $campaignHash)
     {
         $this->params = [
             'name' => $this->validateName($name),
@@ -52,7 +52,7 @@ class Lead
      * @return string
      * @throws Exception
      */
-    private function validateName(string $name)
+    private function validateName($name)
     {
         if (strlen($name) < 2) {
             throw new Exception('Имя должно содержать минимум 2 символа');
@@ -66,7 +66,7 @@ class Lead
      * @return string
      * @throws Exception
      */
-    private function validatePhone(string $phone)
+    private function validatePhone($phone)
     {
         if (!preg_match('/' . implode('|', $this->phone_masks) . '/', $phone)) {
             throw new Exception('Номер телефона не соответствует маске');
@@ -79,7 +79,7 @@ class Lead
      * @return string
      * @throws Exception
      */
-    private function validateIp(string $ip)
+    private function validateIp($ip)
     {
         if (!filter_var($ip, FILTER_VALIDATE_IP)) {
             throw new Exception('Невалидный IP адресс');

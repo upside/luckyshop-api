@@ -1,6 +1,6 @@
 <?php
 
-namespace luckyshopApi;
+namespace luckyShopApi;
 
 class Client
 {

@@ -65,20 +65,23 @@ class Client
     {
         $base_url = $type === 'lead' ? $this->lead_url : $this->status_url;
 
-        $data = http_build_query($params);
+        $url = $base_url . '?api_key=' . $this->api_key .'&'. http_build_query($utm);
 
-        $opts = [
-            'http' => [
-                'method' => $method,
-                'content' => $data,
-                'user_agent' => 'LackyShop Api Client v1'
-            ]
-        ];
+        $ch = curl_init();
 
-        $context = stream_context_create($opts);
-        $result = file_get_contents($base_url . '?api_key=' . $this->api_key . '&' . http_build_query($utm), false, $context);
+        curl_setopt($ch, CURLOPT_URL, rtrim($url,'&'));
+
+        if ($method === 'POST') {
+            curl_setopt($ch, CURLOPT_POST, 1);
+        }
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $result = curl_exec($ch);
+
+        curl_close($ch);
 
         return $result;
     }
-
 }

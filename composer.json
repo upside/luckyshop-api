@@ -9,6 +9,7 @@
     "homepage": "https://github.com/upside/luckyshop-api",
     "license": "MIT",
     "require": {
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-curl": "*"
     }
 }

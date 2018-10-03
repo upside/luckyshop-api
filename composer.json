@@ -12,5 +12,10 @@
       "php": ">=5.4",
       "ext-json": "*",
       "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "luckyShopApi\\": "/src"
+        }
     }
 }

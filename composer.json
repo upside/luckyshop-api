@@ -6,6 +6,8 @@
             "email": "upside89@gmail.com"
         }
     ],
+    "homepage": "https://github.com/upside/luckyshop-api",
+    "license": "MIT",
     "require": {
       "ext-json": "*"
     }
